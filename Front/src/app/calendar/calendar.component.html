@@ -1,0 +1,62 @@
+<div #calendarPdf class="calendar-container">
+  <!-- 📆 Colonne gauche : Calendrier -->
+  <div class="calendar-sidebar">
+    <mat-card class="calendar-card">
+      <mat-calendar [(selected)]="selectedDate" (selectedChange)="onDateSelect($event)"></mat-calendar>
+    </mat-card>
+  </div>
+
+  <!-- 📅 Colonne droite : Planning du jour -->
+  <div class="trame-horaire" #calendarPdf>
+    <h2 class="trame-title">{{ selectedDate | date:'EEEE d MMMM y' }}</h2>
+
+    <div class="timeline">
+      <div *ngFor="let hour of hours" class="hour-slot">
+        <div class="hour-label">{{ hour }}:00</div>
+        <div class="task-slot" *ngFor="let task of getTasksAtHour(hour)">
+          <div class="task" [style.background]="task.color">
+            {{ getProjectName(task.projetId) }} ({{ task.startHour }}h - {{ task.endHour }}h)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button mat-raised-button color="primary" (click)="openPopup()">➕ Ajouter un créneau</button>
+    <button mat-raised-button color="accent" (click)="exportMonthlyPDF()">📅 Exporter le récapitulatif</button>
+  </div>
+</div>
+
+<!-- 🎯 Popup pour ajouter un créneau -->
+<div class="popup animate-popup" *ngIf="isPopupOpen">
+  <h2 class="popup-title">Ajouter un créneau</h2>
+
+  <div class="form-container">
+    <mat-form-field appearance="outline">
+      <mat-label>Projet</mat-label>
+      <mat-select [(ngModel)]="selectedProject">
+        <mat-option *ngFor="let projet of projets" [value]="projet.id"> <!-- ✅ Utilisation de l'ID -->
+          {{ projet.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Heure de début</mat-label>
+      <mat-select [(ngModel)]="startHour">
+        <mat-option *ngFor="let hour of hours" [value]="hour">{{ hour }}h</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Heure de fin</mat-label>
+      <mat-select [(ngModel)]="endHour">
+        <mat-option *ngFor="let hour of hours" [value]="hour">{{ hour }}h</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="saveTask()">Enregistrer</button>
+    <button mat-raised-button color="warn" (click)="closePopup()">Annuler</button>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@angular/forms": "^19.1.4",
+    "@angular/router": "^19.1.4",
+    "bootstrap": "^5.3.3",
+    "ngx-toastr": "^19.0.0"
+  }
+}

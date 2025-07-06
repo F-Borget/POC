@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif; /* Assure la police globale */
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Container for the login form */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Card Style */
+.login-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 350px;
+  font-family: 'Poppins', sans-serif; /* Uniformité pour tout le contenu */
+}
+
+/* Header */
+.login-card h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 600; /* Titre plus épais */
+  font-family: inherit; /* Hérite de la police définie dans .login-card */
+}
+
+.login-card p {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #f0f0f0;
+  font-weight: 400;
+  font-family: inherit; /* Uniformité */
+}
+
+/* Input Styles */
+.input-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-family: inherit; /* Assure la même police */
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+  font-family: inherit; /* Assure la même police */
+}
+
+/* Button */
+.login-button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #6e8efb;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit; /* Assure la même police */
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.login-button:hover {
+  background: #a777e3;
+}

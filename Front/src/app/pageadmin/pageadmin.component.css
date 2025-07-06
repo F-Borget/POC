@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* ============================= */
+/* Styles généraux */
+/* ============================= */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* Conteneur principal (adapté à la sidebar) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Ajustement selon la sidebar */
+.container.ml-20 {
+  margin-left: 80px;
+}
+
+.container.ml-64 {
+  margin-left: 250px;
+}
+
+/* ============================= */
+/* Styles des formulaires */
+/* ============================= */
+.form-section {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+}
+
+/* ============================= */
+/* Boutons modernisés */
+/* ============================= */
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+button:hover {
+  filter: brightness(90%);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Bouton d'action flottant (exemple, si besoin) */
+.btn-floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-floating:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+/* ============================= */
+/* Tableau modernisé */
+/* ============================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+th, td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #e3e6ea;
+}
+
+/* ============================= */
+/* Boutons d'action dans le tableau */
+/* ============================= */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-promote {
+  background-color: #28a745;
+}
+
+.btn-demote {
+  background-color: #ff9800;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+}
+
+.btn-promote:hover,
+.btn-demote:hover,
+.btn-delete:hover {
+  opacity: 0.9;
+}
+.btn-create-user {
+  background-color: #007bff;  /* Bleu moderne */
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+  width: 100%;
+  z-index: 1;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-create-user:hover {
+  background-color: #0056b3; /* Bleu plus foncé */
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+}
+
+.btn-create-user:active {
+  background-color: #004080; /* Bleu encore plus foncé */
+  box-shadow: 0 3px 6px rgba(0, 123, 255, 0.2);
+}
+
+.btn-create-user:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ============================= */
+/* Responsive Design */
+/* ============================= */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    margin-left: 80px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  button {
+    width: 100%;
+  }
+}

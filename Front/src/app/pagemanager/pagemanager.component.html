@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>Gestion des Projets</h2>
+  <form [formGroup]="projectForm" (ngSubmit)="addProject()">
+    <label>Nom du projet:</label>
+    <input type="text" formControlName="name" required>
+    <button type="submit" [disabled]="projectForm.invalid">Ajouter Projet</button>
+  </form>
+
+  <h2>Projets existants</h2>
+  <ul>
+    <li *ngFor="let project of projects">
+      {{ project.name }}
+      <button (click)="deleteProject(project.id)">Supprimer</button>
+    </li>
+  </ul>
+
+  <h2>Gestion des utilisateurs</h2>
+  <ul>
+    <li *ngFor="let account of accounts">
+      {{ account.username }} ({{ account.role }})
+      <select (change)="assignManager($event, account)">
+        <option [value]="''">Aucun Manager</option>
+        <option *ngFor="let manager of managers" [value]="manager.id" [selected]="account.managerId === manager.id">
+          {{ manager.username }}
+        </option>
+      </select>
+    </li>
+  </ul>
+</div>
