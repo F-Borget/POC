@@ -116,4 +116,4 @@ And then you can connect to an admin account. After that put back the previous W
 
 You are ready to try our web app !
 
-Author :   Flavien BORGET / Clément JACQUET / Corentin Laval / Quentin RABAN 
+Author :   Flavien BORGET / Clément JACQUET / Corentin LAVAL / Quentin RABAN 
